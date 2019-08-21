@@ -1,0 +1,11 @@
+<h3>
+Shipping Prices
+</h3>
+<div *ngFor="let shipping of shippingCosts | async">
+  <a (click)=selectShipping(shipping)>
+    <div [class]="(selected && shipping.type==selected.type ? 'selected' : '') + ' shipping-item'">
+        <span> {{shipping.type}} </span>
+        <span> {{shipping.price | currency}} </span>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,6 @@
+<div>
+<h3><a [title]="product.name + ' description'" [routerLink]="['/product',productId]">{{product.name}}</a></h3>
+<h4>{{product.price | currency}}</h4>
+<p *ngIf="product.description">{{product.description}}</p>
+<button (click)=addToCart(productId)>Buy</button>
+</div>
