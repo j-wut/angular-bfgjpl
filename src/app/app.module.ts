@@ -37,7 +37,12 @@ import { ShippingComponent } from './shipping/shipping.component';
   bootstrap: [ AppComponent ],
   providers: [CartService]
 })
-export class AppModule { }
+export class AppModule {
+  constructor (private cart: CartService){
+    window.onbeforeunload = 
+    ()=>{window.localStorage.setItem("angularDemoCart",JSON.stringify(this.cart.items));};
+  }
+ }
 
 
 /*

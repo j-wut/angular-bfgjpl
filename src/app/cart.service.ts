@@ -6,11 +6,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CartService {
-  items={};
+  items;
 
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.items = JSON.parse(window.localStorage.getItem("angularDemoCart")) || {};
+    console.log(window.localStorage);
+    }
   
   addItem(productId){
     this.items[productId]=(this.items[productId] ? this.items[productId] : 0) + 1;
@@ -19,6 +22,7 @@ export class CartService {
 
   clearCart(){
     this.items={};
+    window.localStorage.removeItem("angularDemoCart")
     return this.items;
   }
 
