@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 
-import { HostListener } from '@angular/core';
-
 @Injectable({
   providedIn: 'root'
 })
