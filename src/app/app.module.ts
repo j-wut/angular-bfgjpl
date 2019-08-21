@@ -39,7 +39,8 @@ import { ShippingComponent } from './shipping/shipping.component';
 })
 export class AppModule {
   constructor (private cart: CartService){
-    window.onbeforeunload = this.cart.saveCart;
+    window.onbeforeunload = 
+    ()=>{window.localStorage.setItem("angularDemoCart",JSON.stringify(this.cart.items));};
   }
  }
 
