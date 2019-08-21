@@ -10,10 +10,7 @@ export class CartService {
 
   constructor(
     private http: HttpClient
-  ) {
-    this.items = JSON.parse(window.localStorage.getItem("angularDemoCart")) || {};
-    console.log(window.localStorage);
-    }
+  ) {this.items = JSON.parse(window.localStorage.getItem("angularDemoCart")) || {};}
   
   addItem(productId){
     this.items[productId]=(this.items[productId] ? this.items[productId] : 0) + 1;
